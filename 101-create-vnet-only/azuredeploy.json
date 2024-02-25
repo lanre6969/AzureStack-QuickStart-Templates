@@ -4,33 +4,33 @@
   "apiProfile": "2018-03-01-hybrid",
   "parameters": { },
   "variables": {
-    "vnetName": "myVNet",
+    "vnetName": "kingmyVNet",
     "addressPrefix": "10.0.0.0/24",
-    "subnetName": "Subnet-1",
+    "subnetName": "kingSubnet-1",
     "subnetPrefix": "10.0.0.0/24",
     "dnsServer": "192.168.100.2"
   },
   "resources": [
     {
       "type": "Microsoft.Network/virtualNetworks",
-      "name": "[variables('vnetName')]",
+      "name": "kingmyVNet",
       "location": "[resourceGroup().location]",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
-            "[variables('addressPrefix')]"
+             "10.0.0.0/24",
           ]
         },
         "subnets": [
           {
-            "name": "[variables('subnetName')]",
+            "name": "kingSubnet-1",
             "properties": {
-              "addressPrefix": "[variables('subnetPrefix')]"
+              "addressPrefix": "10.0.0.0/24",
             }
           }
         ],
         "dhcpOptions": {
-          "dnsServers": [ "[variables('dnsServer')]" ]
+          "dnsServers": "192.168.100.2"
         }
       }
     }
